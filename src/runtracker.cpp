@@ -8,13 +8,13 @@
 
 #include "kcftracker.hpp"
 
-//#define VIDEOFILE "/home/vince/Videos/jedaah/2_4km_compressed.avi"
-#define VIDEOFILE "/home/vince/Videos/space/1Drone_2.mp4"
+#define VIDEOFILE "/home/vince/Videos/edgybees/sample.mp4"
+//#define VIDEOFILE "/home/vince/Videos/space/1Drone_2.mp4"
 #define ANNOTATIONSFILE "/home/vmachado/Videos/tracking/small_targets/video07-24.vatic.txt"
 #define ANNOTATIONSOUTFILE "/tmp/out.struck.txt"
 #define DATAASSOCIATIONPERIOD 25000
-//#define OUTVIDEOFILE "/home/vince/Videos/jedaah/2_4km_tracking_kcf.avi"
-#define OUTVIDEOFILE "/home/vince/Videos/space/test_kfc_movement_hog_false.avi"
+#define OUTVIDEOFILE "/tmp/aaa.avi"
+//#define OUTVIDEOFILE "/home/vince/Videos/space/test_kfc_movement_hog_false.avi"
 
 using namespace std;
 using namespace cv;
@@ -72,13 +72,14 @@ int main(int argc, char* argv[]){
 
 
 	map<int, Rect> gt;
-/*    gt[207] = cv::Rect(238,371,15,20);
-    gt[1890] = cv::Rect(208,370,15,20);
-    gt[2949] = cv::Rect(223,372,15,20);
-    gt[3445] = cv::Rect(348,373,15,15);
-    gt[4010] = cv::Rect(400,374,15,15);
-*/
-    gt[1] = cv::Rect(871,342,30,25);
+    gt[214] = cv::Rect(705,195,45,45);
+    gt[544] = cv::Rect(63,440,70,28);
+  //  gt[2949] = cv::Rect(223,372,15,20);
+  //  gt[3445] = cv::Rect(348,373,15,15);
+  //  gt[4010] = cv::Rect(400,374,15,15);
+
+
+ //   gt[0] = cv::Rect(871,342,30,25);
 
 
     Scalar color = getColorFromTrackerId(1);
@@ -112,6 +113,6 @@ int main(int argc, char* argv[]){
 
 		imshow("Image", frame);
         video_out << frame;
-		waitKey(1);
+		waitKey(0);
 	}
 }

@@ -222,6 +222,7 @@ cv::Rect KCFTracker::update(cv::Mat image)
     cv::Mat x = getFeatures(image, 0);
     train(x, interp_factor);
 
+    std::cout << "peak: " << peak_value << std::endl;
     return _roi;
 }
 
