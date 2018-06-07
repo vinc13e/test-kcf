@@ -169,6 +169,25 @@ void KCFTracker::init(const cv::Rect &roi, cv::Mat image)
     //_den = cv::Mat(size_patch[0], size_patch[1], CV_32FC2, float(0));
     train(_tmpl, 1.0); // train with initial frame
  }
+
+
+
+
+cv::Rect KCFTracker::update(cv::Mat image, cv::Rect projected_roi){
+///    bool is_inside = (projected_roi & cv::Rect(0, 0, image.cols, image.rows)) == projected_roi;
+    if(projected_roi.width > 0 && projected_roi.height > 0) {
+        _roi = projected_roi;
+    }
+
+//    if(projected_roi.x > image.cols && projected_roi.y > image.rows)
+//        _roi = {0,0,0,0};
+
+    std::cout << projected_roi << std::endl;
+
+
+    return update(image);
+}
+
 // Update position based on the new frame
 cv::Rect KCFTracker::update(cv::Mat image)
 {

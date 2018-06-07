@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 project(test)
 
+SET("OpenCV_DIR" "/home/vmachado/OpenCV3.3.1")
 find_package(OpenCV REQUIRED)
 
 if(NOT WIN32)
